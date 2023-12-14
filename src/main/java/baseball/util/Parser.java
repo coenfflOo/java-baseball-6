@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class Parser {
     private static final int SIZE_OF_NUMBER = 3;
     private static final Pattern REGEX_NUMBER_PATTERN = Pattern.compile("^[0-9]*$");
+    private static final Pattern REGEX_RESTART_PATTERN = Pattern.compile("^[1-2]*$");
     // Default Constructor
     private Parser() {
     }
@@ -22,6 +23,13 @@ public class Parser {
         return splitInput(input);
     }
 
+    public static boolean parseRestartInput(String input) {
+        INVALID_BLANK.validate(() -> hasWhitespace(input));
+        INVALID_RESTART.validate(() -> isInvalidRestartPattern(input));
+        return input.equals("1");
+    }
+
+    //== Split Method ==//
     private static List<Integer> splitInput(String input) {
         Set<Integer> numberSet = new HashSet<>();
         String[] str = input.split("");
@@ -54,9 +62,16 @@ public class Parser {
     private static boolean isInvalidSize(Set<Integer> numberSet) {
         return numberSet.size() != SIZE_OF_NUMBER;
     }
+
+    private static boolean isInvalidRestartPattern(String input) {
+        return matchWithRegex(input, REGEX_RESTART_PATTERN);
+    }
+
     // == 정규표현식 제약 조건== //
     private static boolean matchWithRegex(String input, Pattern regex) {
         Matcher matcher = regex.matcher(input);
         return !matcher.matches();
     }
+
+
 }
