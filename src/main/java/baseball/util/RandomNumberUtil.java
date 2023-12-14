@@ -1,8 +1,7 @@
 package baseball.util;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.*;
-import java.io.*;
-public class RandomNumberUtill {
+public class RandomNumberUtil {
 
     public static List<Integer> getRandomNumber() {
         List<Integer> computer = new ArrayList<>();

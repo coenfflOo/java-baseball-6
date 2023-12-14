@@ -1,12 +1,10 @@
 package baseball.controller;
 
 
-import static baseball.exception.ErrorCode.ERROR_PREFIX;
-
 import baseball.domain.BallNumber;
 import baseball.domain.ComputerNumber;
 import baseball.service.BaseballService;
-import baseball.util.RandomNumberUtill;
+import baseball.util.RandomNumberUtil;
 import baseball.view.input.InputView;
 import baseball.view.output.OutputView;
 
@@ -27,7 +25,7 @@ public class BaseBallMainController {
 
     private static void baseballGameGenerate() {
         OutputView.printStartMessage();
-        computerNumber = ComputerNumber.of(RandomNumberUtill.getRandomNumber());
+        computerNumber = ComputerNumber.of(RandomNumberUtil.getRandomNumber());
     }
 
     private static void baseballGamePlay() {
