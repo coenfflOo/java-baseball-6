@@ -3,6 +3,7 @@ package baseball.util;
 import static baseball.exception.ErrorCode.*;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -31,7 +32,7 @@ public class Parser {
 
     //== Split Method ==//
     private static List<Integer> splitInput(String input) {
-        Set<Integer> numberSet = new HashSet<>();
+        Set<Integer> numberSet = new LinkedHashSet<>();
         String[] str = input.split("");
         INVALID_LENGTH.validate(() -> isInvalidInputs(str));
         for (String number : str) {

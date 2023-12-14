@@ -9,4 +9,8 @@ public final class OutputView extends OutputWriter {
     public static void printStartMessage() {
         printMessageResponse(BASEBALL_START);
     }
+
+    public static void printEndMessage() {
+        printMessageResponse(BASEBALL_END);
+    }
 }

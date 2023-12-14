@@ -31,8 +31,11 @@ public class BaseBallMainController {
     }
 
     private static void baseballGamePlay() {
-        ballNumber = InputView.readNumberInfo();
-        baseballService.play(computerNumber, ballNumber);
+        do {
+            ballNumber = InputView.readNumberInfo();
+            baseballService.play(computerNumber, ballNumber);
+        } while (!baseballService.isEnd());
+        OutputView.printEndMessage();
     }
 
 }

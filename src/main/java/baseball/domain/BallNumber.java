@@ -13,4 +13,7 @@ public class BallNumber {
         return new BallNumber(ballNumber);
     }
 
+    public List<Integer> getBallNumber() {
+        return ballNumber;
+    }
 }
